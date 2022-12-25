@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+body {
+    background: url(others/hamb.jpg) no-repeat center center/cover;
+
+    min-height: 100vh;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap');
+/* Main Styling */
+
+nav {
+    width: 100vw;
+    height: 9vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: #0caf5bc9;
+}
+
+.navs {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+}
+
+.navigation {
+    cursor: pointer;
+}
+
+#navlogo {
+    margin-left: 145px;
+    width: 63px;
+    height: 63px;
+}
+/* Navbar Styling */
+
+/* Main */
+
+.main {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main-board {
+    margin-top: 75px;
+    background-color: rgba(245, 245, 220, 0.76);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 50vw;
+    height: 60vh;
+    gap: 25px;
+    padding: 25px;
+
+}
+
+.about-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.welcome {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* menu */
+
+
+.cards {
+    margin-top: 75px;
+    background-color: rgba(245, 245, 220, 0.76);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 50vw;
+    height: 60vh;
+    gap: 25px;
+    padding: 25px;
+}
+
+.card {
+    background-color: rgba(240, 255, 255, 0.774);
+    border: 3px solid wheat;
+    border-radius: 7px;
+    width: 12vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card>img {
+    width: 8vw;
+
+}
+
+.card>p {
+    color: #0c24afc9;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Rubik Gemstones', cursive;
+}
