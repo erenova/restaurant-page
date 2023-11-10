@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="bundle.js" defer></script>
+</head>
+
+<body class="bg-stone-300">
+    <div id="menu" class="absolute top-4 right-2 md:hidden sm:right-5">
+        <img data-dynamic-src="menuButton.svg" alt="" class="h-10">
+    </div>
+    <div id="language" class="absolute top-4 right-2 hidden md:block">
+        <div class="flex gap-5 justify-center items-center">
+            <span data-lang-name="English">English</span>
+            <img data-dynamic-src="iconEnglish.svg" alt="flag" class="h-12">
+        </div>
+    </div>
+    <div id="full-page">
+        <div data-element="logo-holder" class=" flex justify-center md:justify-start mt-5">
+            <img data-dynamic-src="logo.svg" alt="logo" class="">
+        </div>
+
+        <div data-element="navbar" class="bg-stone-400  mt-[-6rem]">
+            <ul class=" flex text-4xl  gap-8 md:justify-end md:mr-14 md:ml-14 lg:justify-center">
+                <li class="hidden md:block"><a href="/">Home</a></li>
+                <li class="hidden md:block"><a href="/menu">Menu</a></li>
+                <li class="hidden md:block"><a href="/contact">Contact</a></li>
+                <li class="block md:hidden opacity-0">.</li>
+            </ul>
+
+
+        </div>
+        <div id="app">
+            <div class=" flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-8 xl:gap-0">
+                <div id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24">
+                    <div class="font-serif text-4xl font-bold text-slate-800 text-center">Leaf Doner</div>
+                    <div dishHolder class="gap-8 grid grid-cols-1
+                    sm:grid-cols-2 lg:gap-x-24 mt-2">
+                    </div>
+                </div>
+                <div id="beverages" class="md:mr-7 md:ml-2 xl:mr-24">
+                    <div class="font-serif text-4xl font-bold text-slate-800 text-center">Beverages</div>
+                    <div beverageHolder class=" rounded-sm gap-2 grid grid-cols-2 
+                    sm:grid-cols-2 lg:grid-cols-3 md:gap-x-4 lg:gap-x-8 mt-2">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
