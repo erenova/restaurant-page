@@ -1,3 +1,7 @@
+import { settings } from "..";
+import { openHomePage } from "./home";
+import { openMenuPage } from "./menu";
+
 const hamburgerIcon = document.querySelector("#hamburgerMenu");
 const modals = document.querySelectorAll("[data-hamburger]");
 const modalDark = document.querySelector("#modal-dark");
@@ -15,6 +19,7 @@ modalDark.addEventListener("click", () => {
 });
 
 function disableAll() {
+  document.body.style.overflow = "";
   modalMenu.classList.add("translate-x-full");
 
   setTimeout(() => {
@@ -25,6 +30,9 @@ function disableAll() {
   }, 100);
 }
 function enableAll() {
+  document.body.style.overflow = "hidden";
+  window.scrollTo(0, 0);
+
   modals.forEach((item) => {
     item.dataset.hamburger = "true";
     item.classList.remove("hidden");
@@ -40,4 +48,15 @@ function checkMenuStatus() {
   return value === "true";
 }
 
-enableAll();
+document.querySelector("#homeHamburger").addEventListener("click", () => {
+  if (settings.currentPage !== "home") {
+    openHomePage();
+    disableAll();
+  }
+});
+document.querySelector("#menuHamburger").addEventListener("click", () => {
+  if (settings.currentPage !== "menu") {
+    openMenuPage();
+    disableAll();
+  }
+});
