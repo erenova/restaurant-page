@@ -95,7 +95,7 @@ function openMenuPage() {
     <div id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24">
         <div class="font-serif text-4xl font-bold text-slate-800 text-center">Yaprak Döner</div>
         <div dishHolder class="gap-8 grid grid-cols-1
-        sm:grid-cols-2 lg:gap-x-24 mt-2">
+        sm:grid-cols-2 lg:gap-x-24 mt-2 place-items-center	">
         </div>
     </div>
     <div id="beverages" class="md:mr-7 md:ml-2 xl:mr-24">
