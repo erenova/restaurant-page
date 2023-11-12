@@ -4,7 +4,7 @@ import { openContactPage } from "./contact";
 import { moveValue, openHomePage, resetMoveValue, stopAnimation } from "./home";
 import { openMenuPage } from "./menu";
 
-const navItems = {
+export const navItems = {
   home: document.querySelectorAll('[data-element="home"]'),
   menu: document.querySelectorAll('[data-element="menu"]'),
   contact: document.querySelectorAll('[data-element="contact"]'),

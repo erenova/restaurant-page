@@ -50,13 +50,16 @@ function checkMenuStatus() {
 
 document.querySelector("#homeHamburger").addEventListener("click", () => {
   if (settings.currentPage !== "home") {
-    openHomePage();
     disableAll();
   }
 });
 document.querySelector("#menuHamburger").addEventListener("click", () => {
   if (settings.currentPage !== "menu") {
-    openMenuPage();
+    disableAll();
+  }
+});
+document.querySelector("#contactHamburger").addEventListener("click", () => {
+  if (settings.currentPage !== "contact") {
     disableAll();
   }
 });

@@ -6,25 +6,32 @@ import "./modules/menu";
 import { openMenuPage } from "./modules/menu";
 import "./modules/hamburger";
 import { openContactPage } from "./modules/contact";
+import { navItems } from "./modules/languageManagement";
 
 export const settings = {
   currentPage: "",
 };
 
-openHomePage();
-document.querySelector("#homeNav").addEventListener("click", () => {
-  if (settings.currentPage !== "home") {
-    openHomePage();
-  }
+navItems["home"].forEach((item) => {
+  item.addEventListener("click", () => {
+    if (settings.currentPage !== "home") {
+      openHomePage();
+    }
+  });
 });
-document.querySelector("#menuNav").addEventListener("click", () => {
-  if (settings.currentPage !== "menu") {
-    openMenuPage();
-  }
+navItems["menu"].forEach((item) => {
+  item.addEventListener("click", () => {
+    if (settings.currentPage !== "menu") {
+      openMenuPage();
+    }
+  });
+});
+navItems["contact"].forEach((item) => {
+  item.addEventListener("click", () => {
+    if (settings.currentPage !== "contact") {
+      openContactPage();
+    }
+  });
 });
 
-document.querySelector("#contactNav").addEventListener("click", () => {
-  if (settings.currentPage !== "contact") {
-    openContactPage();
-  }
-});
+openHomePage();
