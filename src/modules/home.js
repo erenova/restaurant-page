@@ -100,6 +100,7 @@ function openHomePage() {
   appendCarouselItemsAll();
 
   settings.currentPage = "home";
+  moveValue = 100;
   animationInterval = setInterval(carouselAnimation, 1500);
 }
 
