@@ -4,6 +4,12 @@ import { openContactPage } from "./contact";
 import { moveValue, openHomePage, resetMoveValue, stopAnimation } from "./home";
 import { openMenuPage } from "./menu";
 
+const navItems = {
+  home: document.querySelectorAll('[data-element="home"]'),
+  menu: document.querySelectorAll('[data-element="menu"]'),
+  contact: document.querySelectorAll('[data-element="contact"]'),
+};
+
 export const langSettings = {
   activeLanguage: getLanguageValue(),
 };
@@ -17,6 +23,18 @@ function getLanguageValue() {
   }
 }
 
+function setNavItemsCorrect() {
+  navItems["home"].forEach((item) => {
+    item.innerText = setText("nav", "home");
+  });
+  navItems["menu"].forEach((item) => {
+    item.innerText = setText("nav", "menu");
+  });
+  navItems["contact"].forEach((item) => {
+    item.innerText = setText("nav", "contact");
+  });
+}
+
 export const languageScript = {
   home: {},
   menu: {
@@ -27,6 +45,11 @@ export const languageScript = {
     contact: ["Contact", "İletişim"],
     location: ["Location", "Konum"],
     maps: ["Maps Link", "Harita Linki"],
+  },
+  nav: {
+    home: ["Home", "Ana Menü"],
+    menu: ["Menu", "Ürünler"],
+    contact: ["Contact", "İletişim"],
   },
 };
 
@@ -47,6 +70,7 @@ export function langChoice(checkArray) {
 export function changeLanguage() {
   switchActiveLang();
   reloadCurrentPage();
+  setNavItemsCorrect();
 }
 
 function switchActiveLang() {
@@ -112,3 +136,4 @@ document.querySelectorAll("[language]").forEach((item) => {
 });
 
 document.addEventListener("DOMContentLoaded", setCorrectImg);
+document.addEventListener("DOMContentLoaded", setNavItemsCorrect);
