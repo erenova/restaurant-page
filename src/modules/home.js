@@ -59,10 +59,6 @@ function appendCarouselItemsAll() {
   setImagesSrc();
 }
 
-function clearPage() {
-  htmlApp.innerHTML = ``;
-}
-
 function openHomePage() {
   if (langSettings.activeLanguage === "tr") {
     htmlApp.innerHTML = `<div class="flex flex-col items-center p-10">
@@ -109,6 +105,10 @@ export function stopAnimation() {
 }
 
 let moveValue = 100;
+
+export function resetMoveValue() {
+  moveValue = 100;
+}
 
 let getCarousel = () => {
   return document.querySelector(`[data-element="carousel"]`);
