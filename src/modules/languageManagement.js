@@ -1,7 +1,7 @@
 import { settings } from "..";
 import { setImagesSrc } from "./assetManagement";
 import { openContactPage } from "./contact";
-import { openHomePage } from "./home";
+import { openHomePage, stopAnimation } from "./home";
 import { openMenuPage } from "./menu";
 
 export const langSettings = {
@@ -47,6 +47,8 @@ export function langChoice(checkArray) {
 export function changeLanguage() {
   switchActiveLang();
   reloadCurrentPage();
+
+  stopAnimation();
 }
 
 function switchActiveLang() {
