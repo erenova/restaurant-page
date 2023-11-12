@@ -4,6 +4,7 @@ import { openMenuPage } from "./menu";
 import { settings } from "..";
 import { langChoice, langSettings } from "./languageManagement";
 const htmlApp = document.querySelector("#app");
+let animationInterval;
 function appendNewCarouselItem(itemObj) {
   let itemHtml = `<div data-spec="clickToMenu" class="w-full flex flex-none bg-zinc-600 text-white cursor-pointer">
   <div class="flex flex-col w-full justify-center items-center text-center">
@@ -51,7 +52,9 @@ function appendNewCarouselItem(itemObj) {
 
 function appendCarouselItemsAll() {
   productsList.forEach((element) => {
-    appendNewCarouselItem(element);
+    if (element.type === "dish") {
+      appendNewCarouselItem(element);
+    }
   });
   setImagesSrc();
 }
@@ -94,8 +97,30 @@ function openHomePage() {
   }
 
   appendCarouselItemsAll();
+  appendCarouselItemsAll();
 
   settings.currentPage = "home";
+  animationInterval = setInterval(carouselAnimation, 1500);
 }
 
-export { openHomePage };
+export function stopAnimation() {
+  clearInterval(animationInterval);
+}
+
+let moveValue = 100;
+
+let getCarousel = () => {
+  return document.querySelector(`[data-element="carousel"]`);
+};
+
+export function carouselAnimation() {
+  if (moveValue < 400) {
+    getCarousel().style.transform = `translateX(-${moveValue}%)`;
+    moveValue += 100;
+  } else {
+    moveValue = 100;
+    getCarousel().style.transform = `translateX(-0%)`;
+  }
+}
+
+export { openHomePage, animationInterval };

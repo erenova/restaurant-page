@@ -1,4 +1,5 @@
 import { settings } from "..";
+import { stopAnimation } from "./home";
 import { setText } from "./languageManagement";
 
 const htmlApp = document.querySelector("#app");
@@ -33,4 +34,5 @@ export function openContactPage() {
       </div>
       </div>`;
   settings.currentPage = "contact";
+  stopAnimation();
 }

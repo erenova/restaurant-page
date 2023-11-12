@@ -2,6 +2,7 @@ import { productsList } from "./product";
 import { setImagesSrc } from "./assetManagement";
 import { settings } from "..";
 import { langChoice, langSettings, setText } from "./languageManagement";
+import { animationInterval, stopAnimation } from "./home";
 /*
 *türkçe ve ingilizce dil seçeneğini hesaba katarak yaz
 TODO menü ürünlerini producttan üretip
@@ -110,6 +111,7 @@ function openMenuPage() {
   document.querySelector("#app").innerHTML = htmlText;
   appendAllMenuItems();
   settings.currentPage = "menu";
+  stopAnimation();
 }
 
 export { openMenuPage };

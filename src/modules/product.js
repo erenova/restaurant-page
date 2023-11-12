@@ -34,7 +34,7 @@ export const productsList = [
     ["55", "80", "100"]
   ),
   new product(
-    [`On Plate`, "Tabakta"],
+    [`On Plate`, "Tabak"],
     "itemPlate.svg",
     ["110", "150", "190"],
     ["160", "215", "270"]
