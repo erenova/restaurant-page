@@ -21,3 +21,5 @@ function setImagesSrc() {
 }
 
 document.addEventListener("DOMContentLoaded", setImagesSrc);
+
+export { setImagesSrc };

@@ -1,4 +1,5 @@
 import { productsList } from "./menuItem";
+import { setImagesSrc } from "./assetManagement";
 /*
 *türkçe ve ingilizce dil seçeneğini hesaba katarak yaz
 TODO menü ürünlerini producttan üretip
@@ -38,21 +39,20 @@ function appendAllMenuItems() {
   productsList.forEach((element) => {
     addMenuItem(element);
   });
+  setImagesSrc();
 }
-
-appendAllMenuItems();
 
 function openMenuPage() {
   document.querySelector(
     "#app"
-  ).innerHTML = ` <div class="border flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-6">
-  <div id="dishes">
+  ).innerHTML = `<div class=" flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-8 xl:gap-0">
+  <div id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24">
       <div class="font-serif text-4xl font-bold text-slate-800 text-center">Leaf Doner</div>
-      <div dishHolder class="border-4 gap-8 grid grid-cols-1
-      sm:grid-cols-2 md:gap-x-16 lg:gap-x-32 mt-2">
+      <div dishHolder class="gap-8 grid grid-cols-1
+      sm:grid-cols-2 lg:gap-x-24 mt-2">
       </div>
   </div>
-  <div id="beverages">
+  <div id="beverages" class="md:mr-7 md:ml-2 xl:mr-24">
       <div class="font-serif text-4xl font-bold text-slate-800 text-center">Beverages</div>
       <div beverageHolder class=" rounded-sm gap-2 grid grid-cols-2 
       sm:grid-cols-2 lg:grid-cols-3 md:gap-x-4 lg:gap-x-8 mt-2">
@@ -61,4 +61,7 @@ function openMenuPage() {
       </div>
   </div>
 </div>`;
+  appendAllMenuItems();
 }
+
+export { openMenuPage };

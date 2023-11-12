@@ -1,8 +1,11 @@
+import { productsList } from "./menuItem";
+import { setImagesSrc } from "./assetManagement";
+import { openMenuPage } from "./menu";
 const htmlApp = document.querySelector("#app");
 
 function appendNewCarouselItem(itemObj) {
-  let itemHtml = `<div class="w-full h-full flex flex-none bg-zinc-600 text-white">
-  <div class="flex flex-col w-full  h-full justify-center items-center text-center">
+  let itemHtml = `<div data-spec="clickToMenu" class="w-full flex flex-none bg-zinc-600 text-white cursor-pointer">
+  <div class="flex flex-col w-full  justify-center items-center text-center">
       <img data-dynamic-src="${itemObj.imageSrc}" src="" alt="" class="h-24">
       <p class=" self-center text-2xl">${itemObj.title}</p>
   </div>
@@ -34,19 +37,23 @@ function appendNewCarouselItem(itemObj) {
 </div>`;
 
   document.querySelector(`[data-element="carousel"]`).innerHTML += itemHtml;
+  document
+    .querySelector('[data-spec="clickToMenu"]')
+    .addEventListener("click", openMenuPage);
 }
 
 function appendCarouselItemsAll() {
   productsList.forEach((element) => {
     appendNewCarouselItem(element);
   });
+  setImagesSrc();
 }
 
 function clearPage() {
   htmlApp.innerHTML = ``;
 }
 
-function openPageHome(lang) {
+function openHomePage(lang = "en") {
   if (lang === "tr") {
     htmlApp.innerHTML = `<div class="flex flex-col items-center p-10">
     
@@ -81,3 +88,5 @@ function openPageHome(lang) {
 
   appendCarouselItemsAll();
 }
+
+export { openHomePage };

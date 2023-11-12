@@ -1,9 +1,11 @@
 import "./style.css";
 import "./modules/assetManagement";
-import "./modules/home";
-import "./modules/menu";
+import { openHomePage } from "./modules/home";
 import "./modules/menuItem";
+import "./modules/menu";
+import { openMenuPage } from "./modules/menu";
+import "./modules/hamburger";
 
-export const settings = {
-  activeLanguage: "en",
-};
+openHomePage();
+document.querySelector("#home").addEventListener("click", openHomePage);
+document.querySelector("#menu").addEventListener("click", openMenuPage);
