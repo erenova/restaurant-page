@@ -71,5 +71,5 @@ export const productsList = [
     `(Vişne/
       Şeftali)`,
   ]),
-  new product("Water", "su.svg", "", "5", "beverage", "(0.5 L)"),
+  new product(["Water", "Su"], "su.svg", "", "5", "beverage", "(0.5 L)"),
 ];
