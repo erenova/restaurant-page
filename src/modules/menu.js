@@ -2,7 +2,7 @@ import { productsList } from "./product";
 import { setImagesSrc } from "./assetManagement";
 import { settings } from "..";
 import { langChoice, langSettings, setText } from "./languageManagement";
-import { animationInterval, resetMoveValue, stopAnimation } from "./home";
+import { resetMoveValue, stopAnimation } from "./home";
 /*
 *türkçe ve ingilizce dil seçeneğini hesaba katarak yaz
 TODO menü ürünlerini producttan üretip
@@ -68,7 +68,7 @@ function appendAllMenuItems() {
 }
 
 function openMenuPage() {
-  let htmlText = `<div class="flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-8 xl:gap-0">
+  let htmlText = `<div class="flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-8 xl:gap-0 select-none">
   <div id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24">
       <div class="font-serif text-4xl font-bold text-slate-800 text-center">${setText(
         "menu",
@@ -91,7 +91,7 @@ function openMenuPage() {
   </div>
 </div>`;
   if (langSettings.activeLanguage === "tr") {
-    htmlText = `<div class=" flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-8 xl:gap-0">
+    htmlText = `<div class=" flex flex-col items-center md:flex-row md:items-start md:justify-around mt-24 gap-8 xl:gap-0 select-none">
     <div id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24">
         <div class="font-serif text-4xl font-bold text-slate-800 text-center">Yaprak Döner</div>
         <div dishHolder class="gap-8 grid grid-cols-1

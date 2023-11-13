@@ -5,7 +5,7 @@ import { setText } from "./languageManagement";
 const htmlApp = document.querySelector("#app");
 
 export function openContactPage() {
-  htmlApp.innerHTML = `<div class="flex flex-col items-center mt-24 gap-6 justify-center text-center">
+  htmlApp.innerHTML = `<div class="flex flex-col items-center mt-24 gap-6 justify-center text-center select-none">
       <div class="font-semibold text-3xl flex justify-start">${setText(
         "about",
         "contact"

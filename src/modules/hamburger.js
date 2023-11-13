@@ -1,6 +1,4 @@
 import { settings } from "..";
-import { openHomePage } from "./home";
-import { openMenuPage } from "./menu";
 
 const hamburgerIcon = document.querySelector("#hamburgerMenu");
 const modals = document.querySelectorAll("[data-hamburger]");
@@ -40,12 +38,6 @@ function enableAll() {
   requestAnimationFrame(() => {
     modalMenu.classList.remove("translate-x-full");
   });
-}
-
-function checkMenuStatus() {
-  let value = modalDark.dataset.hamburger;
-
-  return value === "true";
 }
 
 document.querySelector("#homeHamburger").addEventListener("click", () => {

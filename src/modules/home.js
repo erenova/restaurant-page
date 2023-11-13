@@ -58,7 +58,7 @@ function appendCarouselItemsAll() {
 
 function openHomePage() {
   if (langSettings.activeLanguage === "tr") {
-    htmlApp.innerHTML = `<div class="flex flex-col items-center p-10">
+    htmlApp.innerHTML = `<div class="flex flex-col items-center p-10 select-none">
     
     <div class="font-serif text-2xl text-slate-700 mt-12">Şehrin Premium Döner Mekanına</div>
     
@@ -73,7 +73,7 @@ function openHomePage() {
   </div>
   `;
   } else {
-    htmlApp.innerHTML = `<div class="flex flex-col items-center p-10">
+    htmlApp.innerHTML = `<div class="flex flex-col items-center p-10 select-none">
 
     <div id="welcome-section" class="font-ottoRegular text-5xl mt-12 text-neutral-950">Welcome</div>
   
@@ -122,5 +122,13 @@ export function carouselAnimation() {
     getCarousel().style.transform = `translateX(-0%)`;
   }
 }
+
+document
+  .querySelector('[data-element="logo"]')
+  .addEventListener("click", () => {
+    if (settings.currentPage !== "home") {
+      openHomePage();
+    }
+  });
 
 export { openHomePage, animationInterval };
