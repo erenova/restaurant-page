@@ -111,6 +111,7 @@ function openMenuPage() {
   document.querySelector("#app").innerHTML = htmlText;
   appendAllMenuItems();
   settings.currentPage = "menu";
+  window.location.hash = "#menu";
   stopAnimation();
   resetMoveValue();
 }

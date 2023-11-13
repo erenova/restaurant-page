@@ -34,5 +34,6 @@ export function openContactPage() {
       </div>
       </div>`;
   settings.currentPage = "contact";
+  window.location.hash = "#contact";
   stopAnimation();
 }

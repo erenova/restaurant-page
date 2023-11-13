@@ -92,6 +92,7 @@ function openHomePage() {
   appendCarouselItemsAll();
 
   settings.currentPage = "home";
+  window.location.hash = "#home";
   moveValue = 100;
   animationInterval = setInterval(carouselAnimation, 1500);
   document.querySelectorAll('[data-spec="clickToMenu"]').forEach((item) => {

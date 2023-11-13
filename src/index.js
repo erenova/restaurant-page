@@ -34,4 +34,21 @@ navItems["contact"].forEach((item) => {
   });
 });
 
-openHomePage();
+window.onload = function () {
+  switch (window.location.hash) {
+    case "#menu":
+      openMenuPage();
+      break;
+    case "#home":
+      openHomePage();
+      break;
+    case "#contact":
+      openContactPage();
+      break;
+    case "":
+      openHomePage();
+      break;
+    default:
+      openMenuPage();
+  }
+};
