@@ -45,9 +45,6 @@ function appendNewCarouselItem(itemObj) {
 </div>`;
 
   document.querySelector(`[data-element="carousel"]`).innerHTML += itemHtml;
-  document
-    .querySelector('[data-spec="clickToMenu"]')
-    .addEventListener("click", openMenuPage);
 }
 
 function appendCarouselItemsAll() {
@@ -93,11 +90,13 @@ function openHomePage() {
   }
 
   appendCarouselItemsAll();
-  appendCarouselItemsAll();
 
   settings.currentPage = "home";
   moveValue = 100;
   animationInterval = setInterval(carouselAnimation, 1500);
+  document.querySelectorAll('[data-spec="clickToMenu"]').forEach((item) => {
+    item.addEventListener("click", openMenuPage);
+  });
 }
 
 export function stopAnimation() {
