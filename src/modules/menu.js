@@ -36,7 +36,7 @@ function addMenuItem(product, lang) {
     product.title
   )}</p>
   <div class="w-40"><img data-dynamic-src="${product.imageSrc}" alt=""></div>
-  <div class="grid grid-cols-2  h-full items-end text-stone-300">
+  <div class="grid grid-cols-2 items-end text-stone-300">
       <div class="text-xl text-end"><span class="text-3xl font-semibold">${
         product.prices[0]
       }</span> TL</div>
