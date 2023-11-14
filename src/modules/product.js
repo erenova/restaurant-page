@@ -28,7 +28,7 @@ export const productsList = [
     ["145", "200", "255"]
   ),
   new product(
-    [`Quarter Bread`, `Çeyrek \b Ekmek`],
+    [`Quarter Bread`, `Çeyrek Ekmek`],
     "itemQuarter.svg",
     ["40", "55", "70"],
     ["55", "80", "100"]
