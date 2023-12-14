@@ -3,12 +3,6 @@ import { setImagesSrc } from "./assetManagement";
 import { settings } from "..";
 import { langChoice, langSettings, setText } from "./languageManagement";
 import { resetMoveValue, stopAnimation } from "./home";
-/*
-*türkçe ve ingilizce dil seçeneğini hesaba katarak yaz
-TODO menü ürünlerini producttan üretip
-TODO koda dahil et
-
-*/
 
 function addMenuItem(product, lang) {
   if (product.type === "beverage") {

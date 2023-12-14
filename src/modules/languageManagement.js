@@ -1,7 +1,7 @@
 import { settings } from "..";
 import { setImagesSrc } from "./assetManagement";
 import { openContactPage } from "./contact";
-import { moveValue, openHomePage, resetMoveValue, stopAnimation } from "./home";
+import { openHomePage, stopAnimation } from "./home";
 import { openMenuPage } from "./menu";
 
 export const navItems = {
@@ -38,17 +38,17 @@ function setNavItemsCorrect() {
 export const languageScript = {
   home: {},
   menu: {
-    leafDoner: ["Leaf Doner", "Yaprak Döner"],
+    leafDoner: ["Doner", "Yaprak Döner"],
     beverages: ["Beverages", "İçecekler"],
   },
   about: {
-    contact: ["Contact", "İletişim"],
+    contact: ["Phone", "Telefon"],
     location: ["Location", "Konum"],
     maps: ["Maps Link", "Harita Linki"],
   },
   nav: {
-    home: ["Home", "Ana Menü"],
-    menu: ["Menu", "Ürünler"],
+    home: ["Home", "Ana Sayfa"],
+    menu: ["Menu", "Menü"],
     contact: ["Contact", "İletişim"],
   },
 };
@@ -78,14 +78,14 @@ function switchActiveLang() {
     case "en":
       langSettings.activeLanguage = "tr";
       localStorage.setItem("currentLanguage", "tr");
-      setNewLangAssets("Türkçe", "iconTurkish.svg");
+      setNewLangAssets("TR", "iconTurkish.svg");
       break;
 
     default:
       langSettings.activeLanguage = "en";
       localStorage.setItem("currentLanguage", "en");
 
-      setNewLangAssets("English", "iconEnglish.svg");
+      setNewLangAssets("EN", "iconEnglish.svg");
       break;
   }
 }
@@ -122,11 +122,11 @@ function reloadCurrentPage() {
 function setCorrectImg() {
   switch (langSettings.activeLanguage) {
     case "tr":
-      setNewLangAssets("Türkçe", "iconTurkish.svg");
+      setNewLangAssets("TR", "iconTurkish.svg");
       break;
 
     default:
-      setNewLangAssets("English", "iconEnglish.svg");
+      setNewLangAssets("EN", "iconEnglish.svg");
       break;
   }
 }

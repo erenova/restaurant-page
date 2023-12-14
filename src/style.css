@@ -3,22 +3,20 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'ottoRegular';
-    src: url('fonts/otto.woff2') format('woff2'),
-         url('fonts/otto.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: "ottoRegular";
+  src: url("fonts/otto.woff2") format("woff2"),
+    url("fonts/otto.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-
-
 @font-face {
-    font-family: 'parisRegular';
-    src: url('fonts/paris.woff2') format('woff2'),
-         url('fonts/paris.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: "parisRegular";
+  src: url("fonts/paris.woff2") format("woff2"),
+    url("fonts/paris.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body::-webkit-scrollbar {
+  display: none;
 }

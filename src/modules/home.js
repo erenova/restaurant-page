@@ -90,11 +90,13 @@ function openHomePage() {
   }
 
   appendCarouselItemsAll();
-
+  document
+    .querySelector('[data-dynamic-src="itemWhole.svg"]')
+    .classList.add("min-w-[8rem]");
   settings.currentPage = "home";
   window.location.hash = "#home";
   moveValue = 100;
-  animationInterval = setInterval(carouselAnimation, 1500);
+  animationInterval = setInterval(carouselAnimation, 2500);
   document.querySelectorAll('[data-spec="clickToMenu"]').forEach((item) => {
     item.addEventListener("click", openMenuPage);
   });
