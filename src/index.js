@@ -7,6 +7,9 @@ import { openMenuPage } from "./modules/menu";
 import "./modules/hamburger";
 import { openContactPage } from "./modules/contact";
 import { navItems } from "./modules/languageManagement";
+import { openMenuBeveragesPage } from "./modules/menuBeverages";
+import { openMenuDonerPage } from "./modules/menuDoner";
+import "./modules/goBack";
 
 export const settings = {
   currentPage: "",
@@ -38,6 +41,12 @@ window.onload = function () {
   switch (window.location.hash) {
     case "#menu":
       openMenuPage();
+      break;
+    case "#doner":
+      openMenuDonerPage();
+      break;
+    case "#beverages":
+      openMenuBeveragesPage();
       break;
     case "#home":
       openHomePage();

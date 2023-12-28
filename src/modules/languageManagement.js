@@ -3,6 +3,8 @@ import { setImagesSrc } from "./assetManagement";
 import { openContactPage } from "./contact";
 import { openHomePage, stopAnimation } from "./home";
 import { openMenuPage } from "./menu";
+import { openMenuBeveragesPage } from "./menuBeverages";
+import { openMenuDonerPage } from "./menuDoner";
 
 export const navItems = {
   home: document.querySelectorAll('[data-element="home"]'),
@@ -38,8 +40,17 @@ function setNavItemsCorrect() {
 export const languageScript = {
   home: {},
   menu: {
-    leafDoner: ["Doner", "Yaprak Döner"],
+    doner: ["Doner", "Yaprak Döner"],
     beverages: ["Beverages", "İçecekler"],
+    donerPage: [
+      "Click To view The Doner Page",
+      "Döner Sayfasına Gitmek İçin Tıklayınız",
+    ],
+    beveragesPage: [
+      "Click To view The Beverages Page",
+      "İçecekler Sayfasına Gitmek İçin Tıklayınız",
+    ],
+    backButton: ["Go Back", "Geri Git"],
   },
   about: {
     contact: ["Phone", "Telefon"],
@@ -109,6 +120,12 @@ function reloadCurrentPage() {
       break;
     case "menu":
       changerFunction = openMenuPage;
+      break;
+    case "doner":
+      changerFunction = openMenuDonerPage;
+      break;
+    case "beverages":
+      changerFunction = openMenuBeveragesPage;
       break;
     case "contact":
       changerFunction = openContactPage;

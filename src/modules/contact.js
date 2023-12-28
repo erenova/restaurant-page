@@ -1,4 +1,5 @@
 import { settings } from "..";
+import { backButtonVisibility } from "./goBack";
 import { stopAnimation } from "./home";
 import { setText } from "./languageManagement";
 
@@ -36,4 +37,5 @@ export function openContactPage() {
   settings.currentPage = "contact";
   window.location.hash = "#contact";
   stopAnimation();
+  backButtonVisibility();
 }

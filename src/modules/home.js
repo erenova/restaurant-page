@@ -3,6 +3,7 @@ import { setImagesSrc } from "./assetManagement";
 import { openMenuPage } from "./menu";
 import { settings } from "..";
 import { langChoice, langSettings } from "./languageManagement";
+import { backButtonVisibility } from "./goBack";
 const htmlApp = document.querySelector("#app");
 let animationInterval;
 function appendNewCarouselItem(itemObj) {
@@ -60,7 +61,7 @@ function openHomePage() {
   if (langSettings.activeLanguage === "tr") {
     htmlApp.innerHTML = `<div class="flex flex-col items-center p-10 select-none">
     
-    <div class="font-serif text-2xl text-slate-700 mt-12">Şehrin Premium Döner Mekanına</div>
+    <div class="font-serif text-2xl text-slate-700 mt-12">Şehrin Lezzetli Döner Mekanına</div>
     
     <div id="welcome-section" class="font-ottoRegular text-5xl mt-6 text-neutral-950">Hoş Geldiniz!</div>
   </div>
@@ -77,7 +78,7 @@ function openHomePage() {
 
     <div id="welcome-section" class="font-ottoRegular text-5xl mt-12 text-neutral-950">Welcome</div>
   
-    <div class="font-serif text-2xl mt-6 text-slate-700">to the City's Premier Döner Spot!</div>
+    <div class="font-serif text-2xl mt-6 text-slate-700">to the City's Delicious Doner Place!</div>
   </div>
   <div class="max-w-full mx-auto overflow-hidden relative h-52 mt-8 md:mt-32">
     <div data-element="carousel" class="flex transition-transform duration-500 h-52">
@@ -100,6 +101,8 @@ function openHomePage() {
   document.querySelectorAll('[data-spec="clickToMenu"]').forEach((item) => {
     item.addEventListener("click", openMenuPage);
   });
+  /* remove backbutton */
+  backButtonVisibility();
 }
 
 export function stopAnimation() {
