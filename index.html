@@ -10,27 +10,32 @@
 </head>
 
 <body class="bg-stone-300">
-    <div id="hamburgerMenu" class="absolute top-4 right-2 md:hidden sm:right-5">
-        <img data-dynamic-src="menuButton.svg" alt="" class="h-10">
+    <div class="absolute top-4 right-2 md:hidden sm:right-5 flex flex-gap">
+        <div id="homeButton" class="">
+            <img data-dynamic-src="homeButton.svg" data-element="home" alt="" class="h-10">
+        </div>
+        <div id="hamburgerMenu" class="">
+            <img data-dynamic-src="menuButton.svg" alt="" class="h-10">
+        </div>
     </div>
-    <div id="language" language class="absolute top-4 ml-2 md:right-2 ">
-        <div class="flex gap-1 sm:gap-2 justify-center items-center ">
+    <div id="language" language class="absolute top-4 ml-2 md:right-2">
+        <div class="flex gap-1 sm:gap-2 justify-center items-center">
             <img data-dynamic-src="" data-element="flag" alt="flag" class="h-12 cursor-pointer">
             <span data-lang-name="EN" class="cursor-pointer">EN</span>
         </div>
     </div>
     <div id="full-page">
         <div data-element="logo-holder" class=" flex justify-center md:justify-start mt-8">
-            <img data-dynamic-src="logo.svg" alt="logo" class="cursor-pointer" data-element="logo">
+            <img data-dynamic-src="logo.svg" alt="logo" class=" w-[250px] md:w-[288px]" data-element="logo">
         </div>
 
-        <div data-element="navbar" class="bg-stone-400 mt-[-6rem]">
+        <div data-element="navbar" class="bg-stone-400 mt-[-83px] md:mt-[-92px]">
             <ul class=" flex text-4xl  gap-8 md:justify-end md:mr-14 md:ml-14 lg:justify-center">
                 <li class="hidden md:block"><a id="homeNav" data-element="home" class="cursor-pointer">Home</a></li>
                 <li class="hidden md:block"><a id="menuNav" data-element="menu" class="cursor-pointer">Menu</a></li>
                 <li class="hidden md:block"><a id="contactNav" data-element="contact" class="cursor-pointer">Contact</a>
                 </li>
-                <li class="block md:hidden opacity-0">..</li>
+                <li class="block md:hidden opacity-0">.</li>
             </ul>
 
 
@@ -63,8 +68,8 @@
 
     </div>
     <button id="go-back-button"
-        class="absolute top-40 left-1 bg-zinc-500 p-1 rounded-md invisible md:hidden flex flex-col items-center justify-center">
-        <img data-dynamic-src="goback.svg" alt="" class="h-8 ">
+        class="absolute top-40 left-1  rounded-md invisible md:hidden flex flex-col items-center justify-center">
+        <img data-dynamic-src="backButton.svg" alt="" class="h-12">
 
 
         <span data-element="textBack" class="text-white"></span></button>
