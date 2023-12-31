@@ -6,10 +6,14 @@ import { langChoice, langSettings } from "./languageManagement";
 import { backButtonVisibility } from "./goBack";
 const htmlApp = document.querySelector("#app");
 let animationInterval;
-function appendNewCarouselItem(itemObj) {
-  let itemHtml = `<div data-spec="clickToMenu" class="w-full flex flex-none bg-zinc-600 text-white cursor-pointer">
+function appendNewCarouselItem(itemObj, imgSize = `h-24`) {
+  imgSize;
+
+  let itemHtml = `<div data-spec="clickToMenu" class="w-full h-64 flex flex-col justify-center items-center gap-8 flex-none bg-zinc-600 text-white cursor-pointer">
   <div class="flex flex-col w-full justify-center items-center text-center">
-      <img data-dynamic-src="${itemObj.imageSrc}" src="" alt="" class="h-24">
+      <img data-dynamic-src="${
+        itemObj.imageSrc
+      }" src="" alt="" class="${imgSize}">
       <p class=" self-center text-2xl">${langChoice(itemObj.title)}</p>
   </div>
   <div class="flex ml-4 justify-center items-center gap-4 md:gap-12 lg:gap-20 xl:gap-28 md:ml-0 md:w-full p-1">
@@ -49,11 +53,10 @@ function appendNewCarouselItem(itemObj) {
 }
 
 function appendCarouselItemsAll() {
-  productsList.forEach((element) => {
-    if (element.type === "dish") {
-      appendNewCarouselItem(element);
-    }
-  });
+  appendNewCarouselItem(productsList[0], "h-20");
+  appendNewCarouselItem(productsList[1], "h-24");
+  appendNewCarouselItem(productsList[2], "h-16");
+  appendNewCarouselItem(productsList[3], "h-24");
   setImagesSrc();
 }
 
@@ -65,8 +68,8 @@ function openHomePage() {
     
     <div id="welcome-section" class="font-ottoRegular text-5xl mt-6 text-neutral-950">Hoş Geldiniz!</div>
   </div>
-  <div class="max-w-full mx-auto overflow-hidden relative h-52 mt-8 md:mt-32">
-    <div data-element="carousel" class="flex transition-transform duration-500 h-52">
+  <div class="max-w-full mx-auto overflow-hidden relative h-64 mt-6 md:mt-32">
+    <div data-element="carousel" class="flex transition-transform duration-500 h-64">
         <!-- original -->
   
         <!-- repeat -->
@@ -80,8 +83,8 @@ function openHomePage() {
   
     <div class="font-serif text-2xl mt-6 text-slate-700">to the City's Delicious Doner Place!</div>
   </div>
-  <div class="max-w-full mx-auto overflow-hidden relative h-52 mt-8 md:mt-32">
-    <div data-element="carousel" class="flex transition-transform duration-500 h-52">
+  <div class="max-w-full mx-auto overflow-hidden relative h-64 mt-6 md:mt-32 flex flex-col items-center justify-center">
+    <div data-element="carousel" class="flex transition-transform duration-500 h-64">
         <!-- original -->
   
         <!-- Bitti -->
@@ -89,11 +92,11 @@ function openHomePage() {
   </div>
   `;
   }
+  applyCarouselSettings();
+}
 
+function applyCarouselSettings() {
   appendCarouselItemsAll();
-  document
-    .querySelector('[data-dynamic-src="itemWhole.svg"]')
-    .classList.add("min-w-[8rem]");
   settings.currentPage = "home";
   window.location.hash = "#home";
   moveValue = 100;
@@ -101,7 +104,7 @@ function openHomePage() {
   document.querySelectorAll('[data-spec="clickToMenu"]').forEach((item) => {
     item.addEventListener("click", openMenuPage);
   });
-  /* remove backbutton */
+  /* remove back button */
   backButtonVisibility();
 }
 
@@ -128,13 +131,5 @@ export function carouselAnimation() {
     getCarousel().style.transform = `translateX(-0%)`;
   }
 }
-
-document
-  .querySelector('[data-element="logo"]')
-  .addEventListener("click", () => {
-    if (settings.currentPage !== "home") {
-      openHomePage();
-    }
-  });
 
 export { openHomePage, animationInterval };

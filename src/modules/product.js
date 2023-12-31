@@ -67,9 +67,8 @@ export const productsList = [
   ),
   new product([`Juice `, "Meyve Suyu"], "juice.svg", "", "10", "beverage", [
     `(Sourcherry/
-      Peach)`,
-    `(Vişne/
-      Şeftali)`,
+Peach)`,
+    ``,
   ]),
   new product(["Water", "Su"], "su.svg", "", "5", "beverage", "(0.5 L)"),
 ];

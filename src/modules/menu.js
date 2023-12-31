@@ -7,25 +7,16 @@ import { openMenuDonerPage } from "./menuDoner";
 import { openMenuBeveragesPage } from "./menuBeverages";
 import { backButtonVisibility } from "./goBack";
 
-function addMenuItem(product, isButton, setSpesificWidth) {
-  let widthClasses = `w-28 md:w-28 lg:w-32`;
-  let holderTag = `div`;
-  let holderClosingTag = `div`;
-  let dynamicHeight = "h-72";
-  if (isButton) {
-    widthClasses = `w-52 h-60`;
-    holderTag = `button type="button"`;
-    holderClosingTag = `div`;
-    dynamicHeight = "h-60";
-  }
-
+function addMenuItem(product, imgClass = "w-40") {
   if (product.type === "dish") {
     document.querySelector("[dishHolder]").innerHTML += `
-  <${holderTag} class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-52 ${dynamicHeight} items-center justify-center">
-  <p class="text-3xl text-slate-200 text-center font-bold">${langChoice(
+  <div class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-44 h-64 items-center justify-center">
+  <p class="text-2xl text-slate-200 text-center ">${langChoice(
     product.title
   )}</p>
-  <div class="w-40"><img data-dynamic-src="${product.imageSrc}" alt=""></div>
+  <div class="${imgClass}"><img data-dynamic-src="${
+      product.imageSrc
+    }" alt=""></div>
   <div class="grid grid-cols-2 items-end text-stone-300">
       <div class="text-xl text-end"><span class="text-3xl font-semibold">${
         product.prices[0]
@@ -46,10 +37,10 @@ function addMenuItem(product, isButton, setSpesificWidth) {
         product.grams[2]
       }</span>gr)</div>
   </div>
-</${holderClosingTag}>`;
+</div>`;
   } else if (product.type === "beverage") {
-    document.querySelector("[beverageHolder]").innerHTML += `<${holderTag}
-    class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 ${widthClasses} h-60 items-center">
+    document.querySelector("[beverageHolder]").innerHTML += `<div
+    class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-28 md:w-28 lg:w-32 h-60 items-center">
     <p class="text-2xl text-slate-200 text-center font-bold">${langChoice(
       product.title
     )}</p>
@@ -64,80 +55,73 @@ function addMenuItem(product, isButton, setSpesificWidth) {
           product.prices
         }</span> TL</div>
     </div>
-</${holderClosingTag}>`;
+</div>`;
   } else {
     alert("No Such Product");
   }
 }
+function addMenuItemToMenuPage(product, size, place) {
+  let itemsDOM = `<div ><img data-dynamic-src="${product.imageSrc}" class="${size}"></div>`;
 
-function appendAllMenuItems() {
-  productsList.forEach((element) => {
-    addMenuItem(element);
-  });
-  setImagesSrc();
+  document.querySelector(`[${place}]`).innerHTML = itemsDOM;
 }
 
 function appendMenuButtons() {
-  addMenuItem(productsList[0], true);
-  addMenuItem(productsList[4], true);
+  addMenuItemToMenuPage(
+    productsList[0],
+    "h-20 w-[130px] sm:w-[150px] sm:h-24",
+    "dishHolder"
+  );
+  addMenuItemToMenuPage(productsList[4], "h-20 sm:h-24", "beverageHolder");
   setImagesSrc();
 }
 
 function openMenuPage() {
-  let htmlText = `<div class="flex flex-col items-center md:flex-row md:items-start md:justify-center mt-24 gap-8 xl:gap-0 select-none">
-  <button id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24 flex flex-col items-center gap-4">
-      <div class="font-serif text-4xl font-bold text-slate-800 text-center">${setText(
+  let htmlText = `<div class="flex justify-center gap-4 mt-40">
+  <button id="dishes" class="flex flex-col items-center justify-center gap-12">
+      <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
         "menu",
         "doner"
       )}</div>
-      <div dishHolder class="gap-8 grid grid-cols-1
-       lg:gap-x-24 mt-2">
+      <div dishHolder class="mt-2">
       </div>
-      <div class="font-serif text-xl font-bold text-slate-600 text-center">Click To view The Doner Page</div>
 
   </button>
-  <button id="beverages" class="md:mr-7 md:ml-2 xl:mr-24 flex flex-col items-center gap-4">
-      <div class="font-serif text-4xl font-bold text-slate-800 text-center">${setText(
+  <button id="beverages" class=" flex flex-col items-center gap-12">
+      <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
         "menu",
         "beverages"
       )}</div>
-      <div beverageHolder class="rounded-sm gap-2 grid grid-cols-1 md:gap-x-4 lg:gap-x-8 mt-2">
+      <div beverageHolder class="mt-2">
 
 
       </div>
-      <div class="font-serif text-xl font-bold text-slate-600 text-center">Click To view The Beverages Page</div>
 
   </button>
 </div>`;
   if (langSettings.activeLanguage === "tr") {
-    htmlText = `<div class=" flex flex-col items-center md:flex-row md:items-start md:justify-center mt-24 gap-8 xl:gap-0 select-none">
-    <button id="dishes" class="sm:mr-8 sm:ml-8 xl:ml-24 flex flex-col items-center gap-4">
-        <div class="font-serif text-4xl font-bold text-slate-800 text-center">${setText(
+    htmlText = `
+    <div class="flex justify-center items-center gap-4 mt-40">
+      <button id="dishes" class="flex flex-col items-center justify-center gap-12">
+        <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
           "menu",
           "doner"
         )}</div>
-        <div dishHolder class="gap-8 grid grid-cols-1
-         lg:gap-x-24 mt-2 place-items-center">
+        <div dishHolder class="mt-2">
         </div>
-        <div class="font-serif text-xl font-bold text-slate-600 text-center">${setText(
-          "menu",
-          "donerPage"
-        )}</div>
 
-    </button>
-    <button id="beverages" class="md:mr-7 md:ml-2 xl:mr-24 flex flex-col items-center gap-4">
-        <div class="font-serif text-4xl font-bold text-slate-800 text-center">${setText(
+
+      </button>
+      <button id="beverages" class=" flex flex-col items-center justify-center gap-12">
+        <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
           "menu",
           "beverages"
         )}</div>
-        <div beverageHolder class=" rounded-sm gap-2 grid grid-cols-1 md:gap-x-4 lg:gap-x-8 mt-2">
+        <div beverageHolder class="mt-2">
   
   
         </div>
-        <div class="font-serif text-xl font-bold text-slate-600 text-center">${setText(
-          "menu",
-          "beveragesPage"
-        )}</div>
+        
     </button>
   </div>`;
   }

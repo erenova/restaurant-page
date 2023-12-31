@@ -12,10 +12,6 @@ export function backButtonVisibility() {
     settings.currentPage === "beverages"
   ) {
     document.querySelector("#go-back-button").classList.remove("invisible");
-    document.querySelector('[data-element="textBack"]').textContent = setText(
-      "menu",
-      "backButton"
-    );
   } else {
     document.querySelector("#go-back-button").classList.add("invisible");
   }

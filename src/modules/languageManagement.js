@@ -40,17 +40,8 @@ function setNavItemsCorrect() {
 export const languageScript = {
   home: {},
   menu: {
-    doner: ["Doner", "Yaprak Döner"],
+    doner: ["Doner", "Döner"],
     beverages: ["Beverages", "İçecekler"],
-    donerPage: [
-      "Click To view The Doner Page",
-      "Döner Sayfasına Gitmek İçin Tıklayınız",
-    ],
-    beveragesPage: [
-      "Click To view The Beverages Page",
-      "İçecekler Sayfasına Gitmek İçin Tıklayınız",
-    ],
-    backButton: ["Go Back", "Geri Git"],
   },
   about: {
     contact: ["Phone", "Telefon"],
@@ -89,14 +80,14 @@ function switchActiveLang() {
     case "en":
       langSettings.activeLanguage = "tr";
       localStorage.setItem("currentLanguage", "tr");
-      setNewLangAssets("TR", "iconTurkish.svg");
+      setNewLangAssets("TR", "languageIcon.svg");
       break;
 
     default:
       langSettings.activeLanguage = "en";
       localStorage.setItem("currentLanguage", "en");
 
-      setNewLangAssets("EN", "iconEnglish.svg");
+      setNewLangAssets("EN", "languageIcon.svg");
       break;
   }
 }
@@ -139,11 +130,11 @@ function reloadCurrentPage() {
 function setCorrectImg() {
   switch (langSettings.activeLanguage) {
     case "tr":
-      setNewLangAssets("TR", "iconTurkish.svg");
+      setNewLangAssets("TR", "languageIcon.svg");
       break;
 
     default:
-      setNewLangAssets("EN", "iconEnglish.svg");
+      setNewLangAssets("EN", "languageIcon.svg");
       break;
   }
 }
