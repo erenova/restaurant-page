@@ -1,20 +1,24 @@
 import { productsList } from "./product";
 import { setImagesSrc } from "./assetManagement";
 import { settings } from "..";
-import { langChoice, langSettings, setText } from "./languageManagement";
+import { langChoice, setText } from "./languageManagement";
 import { resetMoveValue, stopAnimation } from "./home";
 import { openMenuDonerPage } from "./menuDoner";
 import { openMenuBeveragesPage } from "./menuBeverages";
 import { backButtonVisibility } from "./goBack";
 
-function addMenuItem(product, imgClass = "w-40") {
+function addMenuItem(
+  product,
+  dishImgClass = "w-40",
+  beverageImgClass = "w-12"
+) {
   if (product.type === "dish") {
     document.querySelector("[dishHolder]").innerHTML += `
   <div class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-44 h-64 items-center justify-center">
   <p class="text-2xl text-slate-200 text-center ">${langChoice(
     product.title
   )}</p>
-  <div class="${imgClass}"><img data-dynamic-src="${
+  <div class="${dishImgClass} flex items-center justify-center"><img data-dynamic-src="${
       product.imageSrc
     }" alt=""></div>
   <div class="grid grid-cols-2 items-end text-stone-300">
@@ -39,18 +43,18 @@ function addMenuItem(product, imgClass = "w-40") {
   </div>
 </div>`;
   } else if (product.type === "beverage") {
-    document.querySelector("[beverageHolder]").innerHTML += `<div
+    document.querySelector("[beverageHolder]").innerHTML += `<div 
     class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-28 md:w-28 lg:w-32 h-60 items-center">
     <p class="text-2xl text-slate-200 text-center font-bold">${langChoice(
       product.title
     )}</p>
-    <p class="text-lg text-slate-100 text-center font-light mt-[-10px]">${langChoice(
+    <p class="text-sm text-slate-100 text-center font-light mt-[-10px]">${langChoice(
       product.info
     )}</p>
-    <div class="w-12 flex h-full items-end "><img data-dynamic-src="${
+    <div class="${beverageImgClass} flex h-full items-center "><img data-dynamic-src="${
       product.imageSrc
     }" alt=""></div>
-    <div class="text-stone-300 flex items-end">
+    <div class="text-stone-300 flex items-center">
         <div class="text-xl text-end"><span class="text-3xl font-semibold">${
           product.prices
         }</span> TL</div>
@@ -92,39 +96,14 @@ function openMenuPage() {
         "menu",
         "beverages"
       )}</div>
-      <div beverageHolder class="mt-2">
+      <div beverageHolder class="mt-2 ">
 
 
       </div>
 
   </button>
 </div>`;
-  if (langSettings.activeLanguage === "tr") {
-    htmlText = `
-    <div class="flex justify-center items-center gap-4 mt-40">
-      <button id="dishes" class="flex flex-col items-center justify-center gap-12">
-        <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
-          "menu",
-          "doner"
-        )}</div>
-        <div dishHolder class="mt-2">
-        </div>
 
-
-      </button>
-      <button id="beverages" class=" flex flex-col items-center justify-center gap-12">
-        <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
-          "menu",
-          "beverages"
-        )}</div>
-        <div beverageHolder class="mt-2">
-  
-  
-        </div>
-        
-    </button>
-  </div>`;
-  }
   document.querySelector("#app").innerHTML = htmlText;
   appendMenuButtons();
   settings.currentPage = "menu";

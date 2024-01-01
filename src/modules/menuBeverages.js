@@ -6,8 +6,8 @@ import { addMenuItem } from "./menu";
 import { productsList } from "./product";
 
 function beverageProducts() {
-  addMenuItem(productsList[4]);
-  addMenuItem(productsList[5]);
+  addMenuItem(productsList[4], "", "w-[50px] ");
+  addMenuItem(productsList[5], "", "w-[50px] ");
   addMenuItem(productsList[6]);
   addMenuItem(productsList[7]);
   addMenuItem(productsList[8]);
@@ -27,7 +27,7 @@ function openMenuBeveragesPage() {
         "menu",
         "beverages"
       )}</div>
-      <div beverageHolder class="gap-8 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5
+      <div beverageHolder beverageItems class="gap-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5
        lg:gap-x-24 mt-2 place-items-center">
       </div>
 

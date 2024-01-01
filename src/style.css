@@ -37,3 +37,28 @@ body::-webkit-scrollbar {
     gap: 26px;
   }
 }
+
+@media only screen and (max-width: 367px) {
+  [dishHolder] {
+    gap: 3px;
+  }
+  [dishHolder] > div {
+    max-width: 160px;
+  }
+  [beverageItems] {
+    gap: 5px;
+  }
+  [beverageItems] > div {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  [dishHolder] > div {
+    max-width: 160px;
+  }
+}
+
+[data-dynamic-src="itemQuarter.svg"] {
+  width: 130px;
+}

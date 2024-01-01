@@ -23,7 +23,8 @@ function openMenuDonerPage() {
         "menu",
         "doner"
       )}</div>
-      <div dishHolder class="gap-4 grid grid-cols-2
+      <div dishHolder class=" gap-4
+       grid grid-cols-2
        md:gap-x-24 mt-2 place-items-center">
       </div>
 
