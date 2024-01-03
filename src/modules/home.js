@@ -55,7 +55,7 @@ function appendNewCarouselItem(itemObj, imgSize = `h-24`) {
 function appendCarouselItemsAll() {
   appendNewCarouselItem(productsList[0], "h-20");
   appendNewCarouselItem(productsList[1], "h-24");
-  appendNewCarouselItem(productsList[2], "h-16");
+  appendNewCarouselItem(productsList[2], "h-20 w-[11rem]");
   appendNewCarouselItem(productsList[3], "h-24");
   setImagesSrc();
 }

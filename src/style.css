@@ -59,6 +59,6 @@ body::-webkit-scrollbar {
   }
 }
 
-[data-dynamic-src="itemQuarter.svg"] {
+.w-40 > [data-dynamic-src="itemQuarter.svg"] {
   width: 130px;
 }

@@ -73,10 +73,10 @@ function addMenuItemToMenuPage(product, size, place) {
 function appendMenuButtons() {
   addMenuItemToMenuPage(
     productsList[0],
-    "h-20 w-[130px] sm:w-[150px] sm:h-24",
+    "h-28 w-[130px] sm:w-[150px] ",
     "dishHolder"
   );
-  addMenuItemToMenuPage(productsList[4], "h-20 sm:h-24", "beverageHolder");
+  addMenuItemToMenuPage(productsList[4], "h-28 ", "beverageHolder");
   setImagesSrc();
 }
 
