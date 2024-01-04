@@ -13,7 +13,7 @@ function beverageProducts() {
   addMenuItem(productsList[8]);
   addMenuItem(productsList[9]);
   addMenuItem(productsList[10]);
-  addMenuItem(productsList[11]);
+  addMenuItem(productsList[11], "", "w-[40px]");
   addMenuItem(productsList[12]);
 }
 
