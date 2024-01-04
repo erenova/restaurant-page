@@ -6,7 +6,7 @@ import { addMenuItem } from "./menu";
 import { productsList } from "./product";
 
 function beverageProducts() {
-  addMenuItem(productsList[4], "", "w-[50px] ");
+  addMenuItem(productsList[4], "", "w-[51px] ");
   addMenuItem(productsList[5], "", "w-[56px] ");
   addMenuItem(productsList[6]);
   addMenuItem(productsList[7]);
