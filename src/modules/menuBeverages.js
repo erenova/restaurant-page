@@ -14,7 +14,7 @@ function beverageProducts() {
   addMenuItem(productsList[9]);
   addMenuItem(productsList[10]);
   addMenuItem(productsList[11], "", "w-[40px]");
-  addMenuItem(productsList[12]);
+  addMenuItem(productsList[12], "", "w-[55px]");
 }
 
 function openMenuBeveragesPage() {
