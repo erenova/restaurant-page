@@ -61,3 +61,9 @@ window.onload = function () {
       openMenuPage();
   }
 };
+
+/* For Load Skeleton problem */
+window.addEventListener("load", () => {
+  document.querySelector("html").style.visibility = "visible";
+  document.querySelector("html").style.opacity = "1";
+});
