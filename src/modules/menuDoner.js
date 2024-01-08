@@ -34,7 +34,10 @@ function openMenuDonerPage() {
   donerProducts();
   backButtonVisibility();
   setImagesSrc();
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
 }
 
 export { openMenuDonerPage };

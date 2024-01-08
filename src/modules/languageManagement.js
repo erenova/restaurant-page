@@ -21,7 +21,7 @@ function getLanguageValue() {
   if (activeItem && (activeItem === "en" || activeItem === "tr")) {
     return activeItem;
   } else {
-    return "en";
+    return "tr";
   }
 }
 
@@ -52,6 +52,9 @@ export const languageScript = {
     home: ["Home", "Ana Sayfa"],
     menu: ["Menu", "Menü"],
     contact: ["Contact", "İletişim"],
+  },
+  contact: {
+    devInfo: ["Developer:", "Geliştirici:"],
   },
 };
 

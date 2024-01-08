@@ -22,24 +22,24 @@ function addMenuItem(
       product.imageSrc
     }" alt=""></div>
   <div class="grid grid-cols-2 items-end text-stone-300">
+  <div class="self-end justify-self-end mr-3">(<span class="">${
+    product.grams[0]
+  }</span>gr)</div>
       <div class="text-xl text-end"><span class="text-3xl font-semibold">${
         product.prices[0]
-      }</span> TL</div>
-      <div class="self-end justify-self-end mr-3">(<span class="">${
-        product.grams[0]
-      }</span>gr)</div>
-      <div class="text-xl text-end"><span class="text-3xl font-semibold">${
-        product.prices[1]
       }</span> TL</div>
       <div class="self-end justify-self-end mr-3">(<span class="">${
         product.grams[1]
       }</span>gr)</div>
       <div class="text-xl text-end"><span class="text-3xl font-semibold">${
-        product.prices[2]
+        product.prices[1]
       }</span> TL</div>
       <div class="self-end justify-self-end mr-3">(<span class="">${
         product.grams[2]
       }</span>gr)</div>
+      <div class="text-xl text-end"><span class="text-3xl font-semibold">${
+        product.prices[2]
+      }</span> TL</div>
   </div>
 </div>`;
   } else if (product.type === "beverage") {

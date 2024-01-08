@@ -19,25 +19,25 @@ export const productsList = [
     ["Half Bread", "Yarım Ekmek"],
     "itemHalf.svg",
     ["65", "90", "115"],
-    ["95", "130", "165"]
+    ["120", "165", "210"]
   ),
   new product(
     ["Whole Bread", "Tam Ekmek"],
     "itemWhole.svg",
     ["100", "140", "180"],
-    ["145", "200", "255"]
+    ["185", "260", "330"]
   ),
   new product(
     [`Quarter Bread`, `Çeyrek Ekmek`],
     "itemQuarter.svg",
     ["40", "55", "70"],
-    ["55", "80", "100"]
+    ["70", "100", "130"]
   ),
   new product(
     [`On Plate`, "Tabak"],
     "itemPlate.svg",
     ["110", "150", "190"],
-    ["160", "215", "270"]
+    ["205", "275", "345"]
   ),
 
   new product(["Cola", "Kola"], "cola.svg", "", "25", "beverage", "330 ml"),
