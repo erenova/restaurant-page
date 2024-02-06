@@ -17,6 +17,9 @@ export function openContactPage() {
         )}: <span><a href="tel:02125193875"
                     class="text-blue-500 underline text-2xl ml-2">(0212) 519 38 75</a>
             </span></div>
+             <div class="font-semibold text-3xl flex justify-start">Instagram: <span><a href="https://www.instagram.com/donercihaciosmaninyeri/"
+                    class="text-blue-500 underline text-2xl ml-2">donercihaciosmaninyeri</a>
+            </span></div>
         <div class="font-semibold text-3xl flex justify-start">${setText(
           "about",
           "location"
