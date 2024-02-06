@@ -10,20 +10,14 @@ export function openContactPage() {
   htmlApp.classList.remove("pb-5");
 
   htmlApp.innerHTML = `<div class="flex flex-col items-center mt-24 justify-center text-center select-none min-h-[77vh]">
-      <div class="flex flex-col items-center gap-6 flex-1">
-        <div class="font-semibold text-3xl flex justify-start">${setText(
-          "about",
-          "contact"
-        )}: <span><a href="tel:02125193875"
+      <div class="flex flex-col items-start gap-6 flex-1">
+        <div class="font-semibold text-3xl flex justify-start"><img data-dynamic-src="phone.svg" class="h-10 ">: <span><a href="tel:02125193875"
                     class="text-blue-500 underline text-2xl ml-2">(0212) 519 38 75</a>
             </span></div>
-             <div class="font-semibold text-3xl flex justify-start">Instagram: <span><a href="https://www.instagram.com/donercihaciosmaninyeri/"
+             <div class="font-semibold text-3xl flex justify-start items-center"><img data-dynamic-src="instagram.svg" class="h-10 ">: <span><a href="https://www.instagram.com/donercihaciosmaninyeri/"
                     class="text-blue-500 underline text-2xl ml-2">donercihaciosmaninyeri</a>
             </span></div>
-        <div class="font-semibold text-3xl flex justify-start">${setText(
-          "about",
-          "location"
-        )}: <span><a target="_blank"
+        <div class="font-semibold text-3xl flex justify-start"><img data-dynamic-src="map.svg" class="h-10 ">: <span><a target="_blank"
                     class="text-blue-500 underline text-2xl ml-2"
                     href="https://maps.app.goo.gl/8jW122zquVpoPwzo6">${setText(
                       "about",
