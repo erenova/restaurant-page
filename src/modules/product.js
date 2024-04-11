@@ -42,7 +42,7 @@ export const productsList = [
 
   new product(["Cola", "Kola"], "cola.svg", "", "35", "beverage", "330 ml"),
   new product(["Fanta", "Fanta"], "fanta.svg", "", "35", "beverage", "330 ml"),
-  new product(["Turnip Juice", "Şalgam"], "salgam.svg", "", "20", "beverage"),
+  new product(["Turnip Juice", "Şalgam"], "salgam.svg", "", "25", "beverage"),
   new product("Ayran", "ayranBuyuk1.svg", "", "25", "beverage", [
     `(Big)`,
     `(Büyük)`,
@@ -52,10 +52,10 @@ export const productsList = [
     `(Küçük)`,
   ]),
   new product(
-    ["Mineral Water", "Sade Soda"],
+    ["Mineral Water", "Maden Suyu"],
     "sodaSade.svg",
     "",
-    "15",
+    "20",
     "beverage",
   ),
   new product(
@@ -65,7 +65,7 @@ export const productsList = [
     "20",
     "beverage",
   ),
-  new product([`Juice `, "Meyve Suyu"], "juice.svg", "", "15", "beverage", [
+  new product([`Juice `, "Meyve Suyu"], "juice.svg", "", "20", "beverage", [
     `(Sourcherry/
     Peach)`,
     ``,
