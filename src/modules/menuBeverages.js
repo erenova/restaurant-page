@@ -6,15 +6,15 @@ import { addMenuItem } from "./menu";
 import { productsList } from "./product";
 
 function beverageProducts() {
-  addMenuItem(productsList[4], "", "w-[51px] ");
-  addMenuItem(productsList[5], "", "w-[56px] ");
+  addMenuItem(productsList[4], "", "w-[98px] ");
+  addMenuItem(productsList[5], "", "w-[100px] ");
   addMenuItem(productsList[6]);
   addMenuItem(productsList[7]);
   addMenuItem(productsList[8]);
   addMenuItem(productsList[9]);
-  addMenuItem(productsList[10]);
+  addMenuItem(productsList[10], "", "w-[40px]");
   addMenuItem(productsList[11], "", "w-[40px]");
-  addMenuItem(productsList[12], "", "w-[55px]");
+  addMenuItem(productsList[12], "", "w-[30px]");
 }
 
 function openMenuBeveragesPage() {
@@ -25,7 +25,7 @@ function openMenuBeveragesPage() {
   <div id="dish-section" class="sm:mr-8 sm:ml-8 xl:ml-24 flex flex-col items-center gap-4">
       <div class="font-serif text-4xl font-bold text-slate-800 text-center">${setText(
         "menu",
-        "beverages"
+        "beverages",
       )}</div>
       <div beverageHolder beverageItems class="gap-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5
        lg:gap-x-24 mt-2 place-items-center">

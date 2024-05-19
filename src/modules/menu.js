@@ -1,4 +1,4 @@
-import { productsList } from "./product";
+import { product, productsList } from "./product";
 import { setImagesSrc } from "./assetManagement";
 import { settings } from "..";
 import { langChoice, setText } from "./languageManagement";
@@ -10,13 +10,13 @@ import { backButtonVisibility } from "./goBack";
 function addMenuItem(
   product,
   dishImgClass = "w-40",
-  beverageImgClass = "w-12"
+  beverageImgClass = "w-12",
 ) {
   if (product.type === "dish") {
     document.querySelector("[dishHolder]").innerHTML += `
   <div class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-44 h-64 items-center justify-center">
   <p class="text-2xl text-slate-200 text-center ">${langChoice(
-    product.title
+    product.title,
   )}</p>
   <div class="${dishImgClass} flex items-center justify-center"><img data-dynamic-src="${
       product.imageSrc
@@ -46,10 +46,10 @@ function addMenuItem(
     document.querySelector("[beverageHolder]").innerHTML += `<div 
     class="border-gray-700 border-2 rounded-md bg-zinc-500 flex flex-col gap-3 w-28 md:w-28 lg:w-32 h-60 items-center">
     <p class="text-2xl text-slate-200 text-center font-bold">${langChoice(
-      product.title
+      product.title,
     )}</p>
     <p class="text-sm text-slate-100 text-center font-light mt-[-10px]">${langChoice(
-      product.info
+      product.info,
     )}</p>
     <div class="${beverageImgClass} flex h-full items-center "><img data-dynamic-src="${
       product.imageSrc
@@ -74,9 +74,13 @@ function appendMenuButtons() {
   addMenuItemToMenuPage(
     productsList[0],
     "h-28 w-[150px] sm:w-[170px] ",
-    "dishHolder"
+    "dishHolder",
   );
-  addMenuItemToMenuPage(productsList[4], "h-28 ", "beverageHolder");
+  addMenuItemToMenuPage(
+    new product(["Cola", "Kola"], "cola.svg", "", "35", "beverage", "330 ml"),
+    "h-28 ",
+    "beverageHolder",
+  );
   setImagesSrc();
 }
 
@@ -85,7 +89,7 @@ function openMenuPage() {
   <button id="dishes" class="flex flex-col items-center justify-center gap-12">
       <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
         "menu",
-        "doner"
+        "doner",
       )}</div>
       <div dishHolder class="mt-2">
       </div>
@@ -94,7 +98,7 @@ function openMenuPage() {
   <button id="beverages" class=" flex flex-col items-center gap-12">
       <div class="font-serif text-3xl font-bold text-slate-800 text-center">${setText(
         "menu",
-        "beverages"
+        "beverages",
       )}</div>
       <div beverageHolder class="mt-2 ">
 
@@ -111,10 +115,10 @@ function openMenuPage() {
   stopAnimation();
   resetMoveValue();
 
-  document.querySelector("#dishes").addEventListener("click", (e) => {
+  document.querySelector("#dishes").addEventListener("click", () => {
     openMenuDonerPage();
   });
-  document.querySelector("#beverages").addEventListener("click", (e) => {
+  document.querySelector("#beverages").addEventListener("click", () => {
     openMenuBeveragesPage();
   });
   backButtonVisibility();
