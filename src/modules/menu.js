@@ -76,11 +76,7 @@ function appendMenuButtons() {
     "h-28 w-[150px] sm:w-[170px] ",
     "dishHolder",
   );
-  addMenuItemToMenuPage(
-    new product(["Cola", "Kola"], "cola.svg", "", "35", "beverage", "330 ml"),
-    "h-28 ",
-    "beverageHolder",
-  );
+  addMenuItemToMenuPage(productsList[4], "h-28 ", "beverageHolder");
   setImagesSrc();
 }
 
